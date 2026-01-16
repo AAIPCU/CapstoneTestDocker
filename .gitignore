@@ -5,3 +5,4 @@ test/*
 .venv_linux/*
 **/__pycache__/*
 **/data/*
+pipeline_results.csv
