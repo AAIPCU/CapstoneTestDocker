@@ -7,3 +7,4 @@
 ```
     docker compose up
 ```
+> *Build can take more than 5 minutes due to libraries installation.*
