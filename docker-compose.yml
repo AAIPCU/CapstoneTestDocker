@@ -1,0 +1,11 @@
+services:
+  test-pipeline:
+    build: .
+    volumes:
+      # [Host Path] : [Container Path]
+      # Specify input folder
+      - "C:/Users/user/Desktop/CEDT/Capstone/dev/data/spoof_dataset/cropped/all:/data/input"
+      # Specify output folder
+      - "C:/Users/user/Desktop/CEDT/Capstone_docker_test:/data/output"
+      
+      - "./config.yaml:/app/config.yaml"

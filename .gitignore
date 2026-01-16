@@ -1,0 +1,7 @@
+services/backend/Pipeline/FraudDetection/models/*
+dev/*
+test/*
+.venv/*
+.venv_linux/*
+**/__pycache__/*
+**/data/*

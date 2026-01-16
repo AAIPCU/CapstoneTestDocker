@@ -1,0 +1,170 @@
+{
+    "nameTH": {
+        "points": [
+            330,
+            133,
+            1140,
+            216
+        ],
+        "lang": "tha",
+        "white_list": "",
+        "black_list": "0123456789/-",
+        "config": ""
+    },
+    "nameEN": {
+        "points": [
+            468,
+            208,
+            1099,
+            256
+        ],
+        "lang": "eng",
+        "white_list": "",
+        "black_list": "0123456789-/",
+        "config": ""
+    },
+    "lastNameEN": {
+        "points": [
+            534,
+            260,
+            1100,
+            308
+        ],
+        "lang": "eng",
+        "white_list": "",
+        "black_list": "0123456789-/",
+        "config": ""
+    },
+    "id": {
+        "points": [
+            517,
+            68,
+            976,
+            122
+        ],
+        "lang": "eng",
+        "white_list": "",
+        "black_list": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-/,",
+        "config": ""
+    },
+    "birthDateTH": {
+        "points": [
+            521,
+            314,
+            806,
+            361
+        ],
+        "lang": "tha",
+        "white_list": "",
+        "black_list": ",",
+        "config": ""
+    },
+    "birthDateEN": {
+        "points": [
+            592,
+            363,
+            869,
+            409
+        ],
+        "lang": "eng",
+        "white_list": "",
+        "black_list": ",",
+        "config": ""
+    },
+    "requestNumber": {
+        "points": [
+            883,
+            639,
+            1138,
+            675
+        ],
+        "lang": "eng",
+        "white_list": "",
+        "black_list": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ./",
+        "config": ""
+    },
+    "image": {
+        "points": [
+            890,
+            343,
+            1150,
+            638
+        ],
+        "lang": "",
+        "white_list": "",
+        "black_list": "",
+        "config": ""
+    },
+    "expireDateTH": {
+        "points": [
+            655,
+            557,
+            855,
+            588
+        ],
+        "lang": "tha",
+        "white_list": "",
+        "black_list": ",",
+        "config": ""
+    },
+    "expireDateEN": {
+        "points": [
+            656,
+            625,
+            856,
+            658
+        ],
+        "lang": "eng",
+        "white_list": "",
+        "black_list": ",",
+        "config": ""
+    },
+    "address1": {
+        "points": [
+            192,
+            451,
+            888,
+            519
+        ],
+        "lang": "tha",
+        "white_list": "",
+        "black_list": ",",
+        "config": ""
+    },
+    "address2": {
+        "points": [
+            115,
+            507,
+            887,
+            565
+        ],
+        "lang": "tha",
+        "white_list": "",
+        "black_list": ",",
+        "config": ""
+    },
+    "issueDateTH": {
+        "points": [
+            113,
+            555,
+            301,
+            598
+        ],
+        "lang": "tha",
+        "white_list": "",
+        "black_list": ",",
+        "config": ""
+    },
+    "issueDateEN": {
+        "points": [
+            115,
+            622,
+            303,
+            660
+        ],
+        "lang": "eng",
+        "white_list": "",
+        "black_list": ",",
+        "config": ""
+    }
+}
