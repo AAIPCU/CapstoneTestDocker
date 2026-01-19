@@ -2,6 +2,10 @@ def query_output(data) :
 	output = {}
 	addressFull = ""
 	address_field = {"addressNo" : "", "moo" : "หมู่ที่ ", "trok" : "ตรอก", "soi" : "ซ.", "street" : "ถ.", "subDistrict" : "ต.", "district" : "อ.", "province" : "จ."}
+	if data["address"]["province"] == "กรุงเทพมหานคร" :
+		address_field["district"] = "เขต"
+		address_field["subDistrict"] = "แขวง"
+		address_field["province"] = ""
 	for item in data :
 		if item != "image" :
 			for subItem in data[item] :
