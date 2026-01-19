@@ -5,7 +5,7 @@ openpyxl==3.1.5
 Pillow==12.1.0
 pytesseract==0.3.13
 rapidfuzz==3.14.3
-torch==2.8.0
+torch==2.8.0+cpu 
 torchvision==0.23.0
 transformers==4.57.3
 ultralytics==8.3.236
