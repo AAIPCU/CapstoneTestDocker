@@ -1,4 +1,4 @@
 # config.yaml
 input_folder: "/data/input"  
 output_file: "/data/output/pipeline_results.csv"
-sample_limit: 3
+sample_limit: -1  # Set to -1 for no limit

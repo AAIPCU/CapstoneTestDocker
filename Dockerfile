@@ -19,10 +19,9 @@ FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-# Tell Python where to find the libraries we installed in the builder
 ENV PYTHONPATH="${PYTHONPATH}:/app/deps"
 
-# Install ONLY the necessary system libraries
+# Install necessary system libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libgl1 \
     libglib2.0-0 \
@@ -38,7 +37,7 @@ RUN mkdir -p /usr/share/tesseract-ocr/5/tessdata/ && \
 
 WORKDIR /app
 
-# Copy only the installed packages and code from the builder
+# Copy installed packages and code from the builder
 COPY --from=builder /build/deps /app/deps
 COPY . .
 
