@@ -1,6 +1,10 @@
 # --- STAGE 1: Builder ---
 FROM python:3.11-slim AS builder
 
+# Install uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+ENV UV_PROJECT_ENVIRONMENT=/build/.venv
+
 WORKDIR /build
 
 # Install build dependencies
@@ -8,18 +12,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends wget && \
     rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies into a local folder
-COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir --target=/build/deps \
+RUN --mount=type=bind,source=requirements.txt,target=requirements.txt \
+    uv venv $UV_PROJECT_ENVIRONMENT && \
+    uv pip install --no-cache \
+    --index-strategy unsafe-best-match \
     --extra-index-url https://download.pytorch.org/whl/cpu \
     -r requirements.txt pyyaml
 
 # --- STAGE 2: Final Runtime ---
 FROM python:3.11-slim
 
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-ENV PYTHONPATH="${PYTHONPATH}:/app/deps"
+ENV PYTHONDONTWRITEBYTECODE=1 
+ENV PYTHONUNBUFFERED=1 
+ENV PATH="/app/.venv/bin:$PATH"
 
 # Install necessary system libraries
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -38,7 +43,7 @@ RUN mkdir -p /usr/share/tesseract-ocr/5/tessdata/ && \
 WORKDIR /app
 
 # Copy installed packages and code from the builder
-COPY --from=builder /build/deps /app/deps
+COPY --from=builder /build/.venv /app/.venv
 COPY . .
 
 CMD ["python", "pipeline_test.py"]
