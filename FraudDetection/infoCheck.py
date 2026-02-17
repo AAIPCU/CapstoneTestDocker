@@ -16,6 +16,9 @@ def check_id_number(id_number):
         "id_checksum_valid": False,
     }
 
+    if not isinstance(id_number, str):
+        return flags
+
     # Check length
     if len(id_number) == 13 and id_number.isdigit():
         flags["id_length_valid"] = True
@@ -47,6 +50,9 @@ def check_request_number(request_number, issue_date):
         "issue_date_valid": False,
     }
 
+    if not isinstance(request_number, str) or not isinstance(issue_date, str):
+        return flags
+
     # Check length
     if len(request_number) == 16:
         flags["request_length_valid"] = True
@@ -69,7 +75,7 @@ def check_request_number(request_number, issue_date):
     issue_date_split = issue_date.split('-')
     if len(issue_date_split) != 3:
         return flags
-    for i in range(2):
+    for i in range(3):
         if issue_date_split[i].isdigit() == False:
             return flags
     date_str = request_number[8:12]
